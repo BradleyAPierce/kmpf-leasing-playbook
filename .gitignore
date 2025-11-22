@@ -1,0 +1,13 @@
+# Node modules and system files
+node_modules/
+.DS_Store
+*.log
+.env
+# Ignore build output
+/dist/
+/build/
+# Ignore Mac system files
+Icon?
+# Ignore PDFs and data if needed
+assets/pdfs/
+assets/data/*.bak
