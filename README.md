@@ -29,7 +29,48 @@ This playbook provides:
 ---
 
 ## Project Structure
-(Code block removed for compatibility. Provided in documentation.)
+kmpf-leasing-playbook/
+│
+├── index.html
+├── README.md
+├── docs/
+│   └── instructions.md
+│
+├── components/
+│   ├── nav.html
+│   ├── breadcrumb.html
+│   └── footer.html
+│
+├── modules/
+│   ├── foundations.html
+│   ├── lease-types.html
+│   ├── conversations.html
+│   ├── objections.html
+│   ├── process-tools.html
+│   ├── leasing-partners.html
+│   └── more-resources.html
+│
+├── assets/
+│   ├── css/
+│   │   ├── km-theme.css        # KM Brand Bootstrap overrides
+│   │   └── styles.css          # Optional additional styles
+│   │
+│   ├── js/
+│   │   └── main.js             # Component injection + behaviors
+│   │
+│   ├── images/
+│   │   ├── headers/            # Hero images (top banners)
+│   │   └── icons/              # UI icons (optional)
+│   │
+│   ├── pdfs/                   # All official KMPF learning documents
+│   │
+│   └── data/                   # JSON-driven interactive content
+│       ├── glossary.json
+│       ├── lease_types.json
+│       ├── objections.json
+│       └── scenarios.json
+│
+└── .gitignore
 
 ---
 
