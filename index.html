@@ -35,24 +35,8 @@
       </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="page-hero position-relative">
-      <img
-        src="https://cdn.jsdelivr.net/gh/BradleyAPierce/KMPF_Images/KMPF_Home_Banner.jpg"
-        class="hero-image img-fluid w-100"
-        alt="KMPF Leasing Playbook Home Hero" />
-
-      <div class="hero-overlay text-white">
-        <h1 class="display-5 fw-bold">Konica Minolta Premier Finance</h1>
-        <p class="lead mb-3">
-          Your single source of truth for leasing fundamentals, customer
-          conversations, process guidance, and official KMPF sales resources.
-        </p>
-        <a href="modules/foundations.html" class="btn btn-primary btn-lg">
-          Start with Foundations
-        </a>
-      </div>
-    </section>
+    <!-- Hero (Injected) -->
+    <div id="hero-container"></div>
 
     <!-- Breadcrumb (injected) -->
     <div id="breadcrumb-container"></div>
@@ -213,6 +197,9 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Headers JS (hero config + setup) -->
+    <script src="assets/js/headers.js"></script>
 
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
