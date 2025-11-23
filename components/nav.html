@@ -1,4 +1,159 @@
-<!-- Navigation component placeholder -->
-<nav>
-  <!-- Navigation links go here -->
+<nav class="navbar navbar-expand-lg navbar-km navbar-dark">
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#kmpfNav"
+      aria-controls="kmpfNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="kmpfNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <!-- Home (no dropdown) -->
+        <li class="nav-item">
+          <a class="nav-link" href="/index.html" data-nav-id="home">Home</a>
+        </li>
+
+        <!-- Foundations dropdown -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="/modules/foundations.html"
+            id="navFoundations"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            data-nav-id="foundations">
+            Foundations
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navFoundations">
+            <li>
+              <a
+                class="dropdown-item"
+                href="/modules/foundations.html"
+                data-nav-id="foundations">
+                Foundations
+              </a>
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="/modules/lease-types.html"
+                data-nav-id="lease-types">
+                Lease Types &amp; Positioning
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Customer Conversations dropdown -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="/modules/conversations.html"
+            id="navConversations"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            data-nav-id="conversations">
+            Customer Conversations
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navConversations">
+            <li>
+              <a
+                class="dropdown-item"
+                href="/modules/conversations.html"
+                data-nav-id="conversations">
+                Customer Conversations
+              </a>
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="/modules/objections.html"
+                data-nav-id="objections">
+                Objections &amp; Competitive
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Tools & Partners dropdown -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="/modules/process-tools.html"
+            id="navToolsPartners"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            data-nav-id="process-tools">
+            Tools &amp; Partners
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navToolsPartners">
+            <li>
+              <a
+                class="dropdown-item"
+                href="/modules/process-tools.html"
+                data-nav-id="process-tools">
+                KMPF Process &amp; Tools
+              </a>
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="/modules/leasing-partners.html"
+                data-nav-id="leasing-partners">
+                KMPF Lease Partners
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- More Resources dropdown -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="/modules/more-resources.html"
+            id="navMoreResources"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            data-nav-id="more-resources">
+            More Resources
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navMoreResources">
+            <li>
+              <a
+                class="dropdown-item"
+                href="/modules/more-resources.html"
+                data-nav-id="more-resources">
+                Resource Page 1
+              </a>
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="/modules/resources-2.html"
+                data-nav-id="resources-2">
+                Resource Page 2
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Minimal theme toggle switch -->
+      <div class="theme-toggle-wrapper ms-3">
+        <label class="theme-switch" aria-label="Toggle light/dark theme">
+          <input type="checkbox" id="theme-toggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+  </div>
 </nav>

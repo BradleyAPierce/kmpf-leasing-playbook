@@ -1,1 +1,367 @@
-/* KM Brand Bootstrap overrides */
+/* =========================================================
+   KM Brand Theme for KMPF Leasing Playbook
+   - Light & Dark theme support
+   - Navbar, breadcrumb, footer stay brand-consistent
+   - Pink primary buttons with hover animation
+   ========================================================= */
+
+/* -------------------------
+   Brand Tokens – Light (Default)
+   ------------------------- */
+
+:root {
+  /* Primary brand colors */
+  --km-blue: #0062c2;
+  --km-white: #ffffff;
+  --km-black: #000000;
+  --km-cool-gray: #e5e3df;
+  --km-light-green: #c1e5f4;
+  --km-light-blue: #bee2dd;
+
+  /* Secondary colors */
+  --km-pink: #c0167b;
+  --km-gold: #cea100;
+  --km-purple: #826fb0;
+  --km-turquoise: #009eb7;
+
+  /* Bootstrap-ish mappings */
+  --bs-primary: var(--km-blue);
+  --bs-secondary: var(--km-turquoise);
+  --bs-info: var(--km-light-blue);
+  --bs-success: var(--km-light-green);
+  --bs-warning: var(--km-gold);
+  --bs-danger: var(--km-pink);
+  --bs-light: var(--km-cool-gray);
+  --bs-dark: var(--km-black);
+
+  --bs-body-bg: var(--km-white);
+  --bs-body-color: var(--km-black);
+
+  /* Surface + border tokens */
+  --km-surface: #ffffff;
+  --km-surface-alt: #f5f7fa;
+  --km-border-subtle: #dbe2ec;
+
+  /* Radius */
+  --bs-border-radius: 0.75rem;
+  --bs-border-radius-lg: 1rem;
+  --bs-border-radius-xl: 1.5rem;
+}
+
+/* -------------------------
+   Global Body & Layout
+   ------------------------- */
+
+body {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+/* Main page wrapper used on index and module pages */
+.page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 2rem;
+}
+
+/* -------------------------
+   Navbar (always KM brand)
+   ------------------------- */
+
+.navbar-km {
+  background-color: var(--km-blue);
+}
+
+/* Ensure navbar text contrasts well */
+.navbar-km .navbar-brand,
+.navbar-km .nav-link {
+  color: #e4f1ff;
+}
+
+.navbar-km .nav-link:hover,
+.navbar-km .nav-link.active {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Optional: make active nav item a bit bolder */
+.navbar-km .nav-link.active {
+  font-weight: 600;
+}
+
+/* Logo text inside header if used */
+.site-header .logo {
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+/* -------------------------
+   Hero / Header Image
+   ------------------------- */
+
+.page-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.7);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem;
+  color: var(--km-white);
+}
+
+.hero-overlay h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.hero-overlay .lead {
+  max-width: 640px;
+}
+
+/* Hero CTA button layout: keep natural width, not full-row */
+.page-hero .hero-overlay .btn {
+  align-self: flex-start;
+  display: inline-flex;
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 992px) {
+  .hero-image {
+    height: 320px;
+  }
+  .hero-overlay h1 {
+    font-size: 2.25rem;
+  }
+}
+
+/* -------------------------
+   Breadcrumb (always KM brand)
+   ------------------------- */
+
+.breadcrumb-nav {
+  background-color: var(--km-cool-gray);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.breadcrumb-nav .breadcrumb {
+  margin-bottom: 0;
+}
+
+.breadcrumb-nav .breadcrumb-item + .breadcrumb-item::before {
+  color: #666666;
+}
+
+.breadcrumb-nav a {
+  color: var(--km-blue);
+  text-decoration: none;
+}
+
+.breadcrumb-nav a:hover {
+  text-decoration: underline;
+}
+
+/* -------------------------
+   Cards
+   ------------------------- */
+
+.card-km {
+  border-radius: var(--bs-border-radius-lg);
+  overflow: hidden;
+  border: 0;
+  background-color: var(--km-surface);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.card-km .card-img-top {
+  height: 140px;
+  object-fit: cover;
+}
+
+.card-km .card-body {
+  padding: 1rem 1.1rem 1.2rem;
+}
+
+/* -------------------------
+   Content Sections (modules)
+   ------------------------- */
+
+.content-section {
+  background-color: var(--km-surface);
+  border-radius: var(--bs-border-radius);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+/* -------------------------
+   Footer (always KM brand)
+   ------------------------- */
+
+.site-footer {
+  background-color: var(--km-cool-gray);
+  color: #333333;
+  font-size: 0.85rem;
+  padding: 1rem 0;
+}
+
+/* -------------------------
+   Buttons
+   ------------------------- */
+
+/* Primary button = KM Pink with subtle hover animation */
+.btn-primary {
+  background-color: var(--km-pink);
+  border-color: var(--km-pink);
+  color: #ffffff;
+  transition: background-color 0.15s ease, transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+/* Hover: ~10% lighter + slight grow */
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #d31887; /* ~10% lighter than #C0167B */
+  border-color: #d31887;
+  transform: scale(1.03);
+  box-shadow: 0 0.35rem 0.9rem rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+}
+
+/* Accessible focus outline */
+.btn-primary:focus-visible {
+  outline: 2px solid #d31887;
+  outline-offset: 2px;
+}
+
+/* -------------------------
+   Back-to-top Button
+   ------------------------- */
+
+.back-to-top {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 999px;
+  border: none;
+  background-color: var(--bs-primary);
+  color: var(--km-white);
+  cursor: pointer;
+  font-size: 1rem;
+  display: none; /* shown via JS */
+  z-index: 1050;
+}
+
+/* -------------------------
+   Scroll Progress Bar
+   ------------------------- */
+
+#scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background-color: var(--bs-primary);
+  z-index: 1100;
+}
+
+/* -------------------------
+   Utility Brand Classes
+   ------------------------- */
+
+.bg-km-primary {
+  background-color: var(--km-blue) !important;
+  color: var(--km-white) !important;
+}
+
+.bg-km-cool-gray {
+  background-color: var(--km-cool-gray) !important;
+}
+
+.bg-km-light-green {
+  background-color: var(--km-light-green) !important;
+}
+
+.bg-km-light-blue {
+  background-color: var(--km-light-blue) !important;
+}
+
+.text-km-primary {
+  color: var(--km-blue) !important;
+}
+
+.text-km-turquoise {
+  color: var(--km-turquoise) !important;
+}
+
+.text-km-gold {
+  color: var(--km-gold) !important;
+}
+
+.text-km-purple {
+  color: var(--km-purple) !important;
+}
+
+/* =========================================================
+   Dark Theme Overrides
+   Applied when <html data-theme="dark">
+   (Brand chrome stays the same: nav, breadcrumb, footer)
+   ========================================================= */
+
+html[data-theme="dark"] {
+  --bs-body-bg: #121212;
+  --bs-body-color: #f5f5f5;
+
+  --km-surface: #1f2933;
+  --km-surface-alt: #111827;
+  --km-border-subtle: #374151;
+
+  /* Slightly lightened brand colors for better contrast on content */
+  --bs-primary: #4f9dff;
+  --bs-secondary: #00b4cf;
+}
+
+html[data-theme="dark"] body {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+
+/* Cards & content panels adapt to dark */
+html[data-theme="dark"] .card-km,
+html[data-theme="dark"] .content-section {
+  background-color: var(--km-surface);
+}
+
+/* Hero image darkened more for contrast */
+html[data-theme="dark"] .hero-image {
+  filter: brightness(0.55);
+}
+
+.km-logo {
+  max-width: 175px;
+  height: auto;
+}
+
+/* Note:
+   - Navbar stays KM Blue (navbar-km)
+   - Breadcrumb stays Cool Gray
+   - Footer stays Cool Gray
+   by NOT overriding them here.
+*/

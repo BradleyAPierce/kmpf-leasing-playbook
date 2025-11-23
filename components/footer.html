@@ -1,4 +1,25 @@
-<!-- Footer component placeholder -->
-<footer>
-  <!-- Footer content goes here -->
+<footer class="site-footer mt-4">
+  <div class="container">
+    <p class="mb-1">
+      <strong>KMPF Leasing Playbook</strong><br />
+      Konica Minolta Business Solutions U.S.A., Inc.
+    </p>
+
+    <p class="small mb-2">
+      This playbook is intended for internal sales enablement only. Konica
+      Minolta does not provide tax or legal advice. All financial discussions
+      should be validated with KMPF Leasing Partners or authorized finance
+      personnel.
+    </p>
+
+    <p class="small text-muted">
+      © <span id="footer-year"></span> Konica Minolta Business Solutions U.S.A.,
+      Inc. All rights reserved.
+    </p>
+  </div>
 </footer>
+
+<script>
+  // Auto-set footer year
+  document.getElementById("footer-year").textContent = new Date().getFullYear();
+</script>
