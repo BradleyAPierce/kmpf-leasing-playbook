@@ -1,4 +1,3 @@
-
 // =======================================================
 // headers.js
 // Modular hero configuration + injection logic
@@ -12,7 +11,7 @@ const CDN = "https://cdn.jsdelivr.net/gh/BradleyAPierce/KMPF_Images/";
 // ----------------------------------------------
 const HERO_CONFIG = {
   home: {
-    img: CDN + "home-hero.jpg",
+    img: CDN + "KMPF_Home_Banner.jpg",
     title: "Konica Minolta Premier Finance",
     subtitle:
       "Your single source of truth for leasing fundamentals, customer conversations, process guidance, and official KMPF sales resources.",

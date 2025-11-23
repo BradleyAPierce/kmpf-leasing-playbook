@@ -128,38 +128,23 @@ function applyTheme(theme) {
 }
 
 /**
- * Update the theme toggle button label/icon to reflect current theme.
- */
-function updateThemeToggleLabel(theme) {
-  const btn = document.getElementById("theme-toggle");
-  if (!btn) return;
-
-  if (theme === "dark") {
-    btn.textContent = "☀️ Light";
-  } else {
-    btn.textContent = "🌙 Dark";
-  }
-}
-
-/**
  * Initialize theme selection and toggle behavior.
- * Should be called after nav is injected so the toggle button exists.
+ * Uses a minimal checkbox switch with id="theme-toggle".
+ * Should be called after nav is injected so the toggle exists.
  */
 function initTheme() {
   const currentTheme = getPreferredTheme();
   applyTheme(currentTheme);
-  updateThemeToggleLabel(currentTheme);
 
-  const btn = document.getElementById("theme-toggle");
-  if (!btn) return;
+  const toggle = document.getElementById("theme-toggle");
+  if (!toggle) return;
 
-  btn.addEventListener("click", function () {
-    const existing =
-      document.documentElement.getAttribute("data-theme") || "light";
-    const nextTheme = existing === "light" ? "dark" : "light";
+  // Set initial position
+  toggle.checked = currentTheme === "dark";
+
+  toggle.addEventListener("change", () => {
+    const nextTheme = toggle.checked ? "dark" : "light";
     applyTheme(nextTheme);
-    updateThemeToggleLabel(nextTheme);
-
     try {
       localStorage.setItem(THEME_KEY, nextTheme);
     } catch (e) {
@@ -229,6 +214,7 @@ function setupScrollProgress() {
 document.addEventListener("DOMContentLoaded", function () {
   // Inject shared components
   injectFragment("#nav-container", "components/nav.html", setupNav);
+  injectFragment("#hero-container", "components/hero.html", window.setupHero);
   injectFragment(
     "#breadcrumb-container",
     "components/breadcrumb.html",
