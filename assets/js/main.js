@@ -222,6 +222,27 @@ document.addEventListener("DOMContentLoaded", function () {
   );
   injectFragment("#footer-container", "components/footer.html");
 
+  // Inject page-specific content based on data-page-id
+  const pageId = document.body.getAttribute("data-page-id");
+  if (pageId) {
+    // Map page IDs to their content files
+    const contentMap = {
+      home: "content-modules/content-index.html",
+      foundations: "content-modules/content-foundations.html",
+      "lease-types": "content-modules/content-lease-types.html",
+      conversations: "content-modules/content-conversations.html",
+      objections: "content-modules/content-objections.html",
+      "process-tools": "content-modules/content-process-tools.html",
+      "leasing-partners": "content-modules/content-leasing-partners.html",
+      "more-resources": "content-modules/content-more-resources.html",
+    };
+
+    const contentPath = contentMap[pageId];
+    if (contentPath) {
+      injectFragment("#content-container", contentPath);
+    }
+  }
+
   // Behavior
   setupBackToTop();
   setupScrollProgress();

@@ -74,6 +74,11 @@ body {
   background-color: var(--km-blue);
 }
 
+.navbar-km .container-fluid {
+  padding-left: 0.25rem;
+  padding-right: 1rem;
+}
+
 /* Ensure navbar text contrasts well */
 .navbar-km .navbar-brand,
 .navbar-km .nav-link {
@@ -84,6 +89,22 @@ body {
 .navbar-km .nav-link.active {
   color: #ffffff;
   text-decoration: underline;
+  background-color: transparent; /* Prevent white background on hover */
+}
+
+/* Dropdown menu items */
+.navbar-km .dropdown-menu {
+  background-color: var(--km-surface);
+}
+
+.navbar-km .dropdown-item {
+  color: var(--bs-body-color);
+}
+
+.navbar-km .dropdown-item:hover,
+.navbar-km .dropdown-item:focus {
+  background-color: var(--km-light-blue);
+  color: var(--km-black);
 }
 
 /* Optional: make active nav item a bit bolder */
@@ -343,6 +364,27 @@ html[data-theme="dark"] body {
   color: var(--bs-body-color);
 }
 
+/* Fix dropdown menu items in dark mode */
+html[data-theme="dark"] .navbar-km .dropdown-menu {
+  background-color: var(--km-surface);
+  border-color: var(--km-border-subtle);
+}
+
+html[data-theme="dark"] .navbar-km .dropdown-item {
+  color: var(--bs-body-color);
+}
+
+html[data-theme="dark"] .navbar-km .dropdown-item:hover,
+html[data-theme="dark"] .navbar-km .dropdown-item:focus {
+  background-color: rgba(
+    79,
+    157,
+    255,
+    0.15
+  ); /* Subtle blue highlight instead of white */
+  color: #4f9dff;
+}
+
 /* Cards & content panels adapt to dark */
 html[data-theme="dark"] .card-km,
 html[data-theme="dark"] .content-section {
@@ -357,6 +399,75 @@ html[data-theme="dark"] .hero-image {
 .km-logo {
   max-width: 175px;
   height: auto;
+}
+
+/* -------------------------
+   Theme Toggle Switch
+   ------------------------- */
+
+.theme-toggle-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: transform 0.3s ease;
+  border-radius: 50%;
+}
+
+.theme-switch input:checked + .slider {
+  background-color: var(--km-pink);
+  border-color: var(--km-pink);
+}
+
+.theme-switch input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+.theme-switch input:focus + .slider {
+  box-shadow: 0 0 0 3px rgba(192, 22, 123, 0.3);
+}
+
+/* Hover effect */
+.slider:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.theme-switch input:checked + .slider:hover {
+  background-color: #d31887;
 }
 
 /* Note:

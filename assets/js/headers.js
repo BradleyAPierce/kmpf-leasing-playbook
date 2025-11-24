@@ -15,54 +15,55 @@ const HERO_CONFIG = {
     title: "Konica Minolta Premier Finance",
     subtitle:
       "Your single source of truth for leasing fundamentals, customer conversations, process guidance, and official KMPF sales resources.",
-    ctaText: "Start with Foundations",
-    ctaHref: "modules/foundations.html",
+    ctaText: "Konica Minolta and First Citizens Bank Forge New Agreement",
+    ctaHref:
+      "https://www.thecannatareport.com/konica-minolta-1st-citizens-bank-agree/",
   },
 
   foundations: {
-    img: CDN + "foundations-hero.jpg",
+    img: CDN + "KMPF_Home_Banner.jpg",
     title: "Foundations",
     subtitle:
       "Build your baseline understanding of leasing, KMPF, and key financial concepts every sales rep should know.",
   },
 
   "lease-types": {
-    img: CDN + "lease-types-hero.jpg",
+    img: CDN + "KMPF_Home_Banner.jpg",
     title: "Lease Types & Positioning",
     subtitle:
       "Learn when to position FMV, $1 Out, TELP, and bundled options to support customer outcomes.",
   },
 
   conversations: {
-    img: CDN + "conversations-hero.jpg",
+    img: CDN + "KMPF_Home_Banner.jpg",
     title: "Customer Conversations",
     subtitle:
       "Use discovery questions, talk tracks, and sales frameworks to lead confident leasing conversations.",
   },
 
   objections: {
-    img: CDN + "objections-hero.jpg",
+    img: CDN + "KMPF_Home_Banner.jpg",
     title: "Objections & Competitive",
     subtitle:
       "Anticipate and handle common objections while positioning KMPF against cash and bank competition.",
   },
 
   "process-tools": {
-    img: CDN + "process-tools-hero.jpg",
+    img: CDN + "KMPF_Home_Banner.jpg",
     title: "KMPF Process & Tools",
     subtitle:
       "Follow the Life Cycle of a Lease and understand the tools and systems that support every step.",
   },
 
   "leasing-partners": {
-    img: CDN + "leasing-partners-hero.jpg",
+    img: CDN + "KMPF_Home_Banner.jpg",
     title: "KMPF Lease Partners",
     subtitle:
       "Meet your leasing partners and learn how to collaborate with them to support your deals.",
   },
 
   "more-resources": {
-    img: CDN + "more-resources-hero.jpg",
+    img: CDN + "KMPF_Home_Banner.jpg",
     title: "More Resources",
     subtitle:
       "Quick access to glossaries, job aids, battlecards, and supporting reference materials.",
