@@ -278,7 +278,7 @@ body {
   left: 0;
   height: 4px;
   width: 0%;
-  background-color: var(--bs-primary);
+  background-color: var(--km-pink);
   z-index: 1100;
 }
 
