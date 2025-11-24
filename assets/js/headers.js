@@ -21,7 +21,7 @@ const HERO_CONFIG = {
   },
 
   foundations: {
-    img: CDN + "KMPF_Home_Banner.jpg",
+    img: CDN + "foundations.jpg",
     title: "Foundations",
     subtitle:
       "Build your baseline understanding of leasing, KMPF, and key financial concepts every sales rep should know.",
