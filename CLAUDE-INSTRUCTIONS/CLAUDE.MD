@@ -23,18 +23,20 @@ The **KMPF Leasing Playbook** is a sales enablement website for Konica Minolta P
 
 ```
 kmpf-leasing-playbook/
-├── index.html                    # Homepage
+├── index.html                    # Homepage (shell for content injection)
 ├── README.md                     # Project documentation
-├── CLAUDE.MD                     # This file
+├── CLAUDE-INSTRUCTIONS/
+│   └── CLAUDE.MD                # This file - AI Assistant Guide
 ├── docs/
 │   └── instructions.md          # Detailed guidelines
 │
-├── components/                  # Reusable UI components
-│   ├── nav.html                # Global navigation
+├── components/                  # Reusable UI components (injected)
+│   ├── nav.html                # Global navigation with theme toggle
+│   ├── hero.html               # Hero banner section
 │   ├── breadcrumb.html         # Breadcrumb navigation
 │   └── footer.html             # Global footer
 │
-├── modules/                     # Main content pages
+├── modules/                     # Main content page shells
 │   ├── foundations.html        # Leasing fundamentals
 │   ├── lease-types.html        # Lease type explanations
 │   ├── conversations.html      # Discovery questions & frameworks
@@ -43,10 +45,15 @@ kmpf-leasing-playbook/
 │   ├── leasing-partners.html   # Partner contacts
 │   └── more-resources.html     # Additional resources
 │
-├── content-modules/             # Modular content sections
-│   ├── lease-comparison.html
-│   ├── glossary.html
-│   └── [other content modules]
+├── content-modules/             # Actual page content (injected into shells)
+│   ├── content-index.html      # Homepage content
+│   ├── content-foundations.html
+│   ├── content-lease-types.html
+│   ├── content-conversations.html
+│   ├── content-objections.html
+│   ├── content-process-tools.html
+│   ├── content-leasing-partners.html
+│   └── content-more-resources.html
 │
 └── assets/
     ├── css/
@@ -54,7 +61,8 @@ kmpf-leasing-playbook/
     │   └── styles.css          # Additional custom styles
     │
     ├── js/
-    │   └── main.js             # Component injection & behaviors
+    │   ├── main.js             # Component injection & behaviors
+    │   └── headers.js          # Hero configuration & setup
     │
     ├── images/
     │   ├── headers/            # Hero banner images
@@ -76,6 +84,7 @@ kmpf-leasing-playbook/
 ### Official Brand Colors
 
 **Primary Palette:**
+
 - KM Blue: `#0062C2` (Primary brand color)
 - White: `#FFFFFF`
 - Black: `#000000`
@@ -84,6 +93,7 @@ kmpf-leasing-playbook/
 - Light Blue: `#BEE2DD`
 
 **Secondary Palette:**
+
 - Pink: `#C0167B`
 - Gold: `#CEA100`
 - Purple: `#826FB0`
@@ -106,11 +116,13 @@ kmpf-leasing-playbook/
 Components (nav, breadcrumb, footer) are **injected via JavaScript** using `main.js` to ensure consistency across all pages.
 
 **How it works:**
+
 1. Each HTML page includes a placeholder element with a specific ID
 2. `main.js` loads the component HTML and injects it into the placeholder
 3. This ensures all pages share the same navigation, breadcrumb, and footer
 
 **When modifying components:**
+
 - Edit the source files in `/components/`
 - Changes automatically propagate to all pages
 - Test injection on multiple pages to ensure consistency
@@ -122,6 +134,7 @@ Components (nav, breadcrumb, footer) are **injected via JavaScript** using `main
 ### Page Structure
 
 Each module page should include:
+
 1. **Hero image banner** with overlay text
 2. **Breadcrumb navigation** for context
 3. **Bootstrap container layout** for content
@@ -136,12 +149,14 @@ Content modules in `/content-modules/` are reusable sections that can be include
 ### JSON-Driven Content
 
 Interactive features use JSON data files in `/assets/data/`:
+
 - **glossary.json**: Leasing terminology definitions
 - **lease_types.json**: Lease type details and comparisons
 - **objections.json**: Common objections and responses
 - **scenarios.json**: Customer scenario examples
 
 **When updating JSON:**
+
 - Maintain the existing schema structure
 - Validate JSON syntax before committing
 - Test the UI to ensure data displays correctly
@@ -269,6 +284,7 @@ Before committing changes:
 ### Alternative Hosting
 
 Compatible with:
+
 - KM Internal Hosting
 - Vercel
 - Netlify

@@ -30,55 +30,67 @@ All of this is delivered in a **responsive Bootstrap 5 website** using **Konica 
 ```text
 kmpf-leasing-playbook/
 │
-├── index.html
-├── README.md
+├── index.html                    # Homepage (shell for content injection)
+├── README.md                     # Project documentation
+├── CLAUDE-INSTRUCTIONS/
+│   └── CLAUDE.MD                 # AI Assistant Guide
 ├── docs/
-│   └── instructions.md
+│   └── instructions.md           # This file - detailed build instructions
 │
-├── components/
-│   ├── nav.html
-│   ├── breadcrumb.html
-│   └── footer.html
+├── components/                   # Reusable UI components (injected)
+│   ├── nav.html                  # Global navigation with theme toggle
+│   ├── hero.html                 # Hero banner section
+│   ├── breadcrumb.html           # Breadcrumb navigation
+│   └── footer.html               # Global footer
 │
-├── modules/
-│   ├── foundations.html
-│   ├── lease-types.html
-│   ├── conversations.html
-│   ├── objections.html
-│   ├── process-tools.html
-│   ├── leasing-partners.html
-│   └── more-resources.html
+├── modules/                      # Main content page shells
+│   ├── foundations.html          # Leasing fundamentals
+│   ├── lease-types.html          # Lease type explanations
+│   ├── conversations.html        # Discovery questions & frameworks
+│   ├── objections.html           # Objection handling
+│   ├── process-tools.html        # KMPF process & tools
+│   ├── leasing-partners.html     # Partner contacts
+│   └── more-resources.html       # Additional resources
 │
-├── assets/
-│   ├── css/
-│   │   ├── km-theme.css
-│   │   └── styles.css        # optional custom styles
-│   │
-│   ├── js/
-│   │   └── main.js
-│   │
-│   ├── images/
-│   │   ├── headers/
-│   │   │   ├── home-hero.jpg
-│   │   │   ├── foundations-hero.jpg
-│   │   │   ├── lease-types-hero.jpg
-│   │   │   ├── conversations-hero.jpg
-│   │   │   ├── objections-hero.jpg
-│   │   │   ├── process-tools-hero.jpg
-│   │   │   ├── leasing-partners-hero.jpg
-│   │   │   └── more-resources-hero.jpg
-│   │   └── icons/
-│   │
-│   ├── pdfs/
-│   │   └── (all official KMPF PDFs)
-│   │
-│   └── data/
-│       ├── glossary.json
-│       ├── lease_types.json
-│       ├── objections.json
-│       └── scenarios.json
+├── content-modules/              # Actual page content (injected into shells)
+│   ├── content-index.html        # Homepage content
+│   ├── content-foundations.html  # Foundations page content
+│   ├── content-lease-types.html  # Lease types page content
+│   ├── content-conversations.html # Conversations page content
+│   ├── content-objections.html   # Objections page content
+│   ├── content-process-tools.html # Process & tools page content
+│   ├── content-leasing-partners.html # Partners page content
+│   └── content-more-resources.html # Resources page content
 │
-└── .gitignore
+└── assets/
+    ├── css/
+    │   ├── km-theme.css          # KM Brand Bootstrap overrides
+    │   └── styles.css            # Optional additional custom styles
+    │
+    ├── js/
+    │   ├── main.js               # Component injection & behaviors
+    │   └── headers.js            # Hero configuration & setup
+    │
+    ├── images/
+    │   ├── headers/              # Hero banner images
+    │   │   ├── home-hero.jpg
+    │   │   ├── foundations-hero.jpg
+    │   │   ├── lease-types-hero.jpg
+    │   │   ├── conversations-hero.jpg
+    │   │   ├── objections-hero.jpg
+    │   │   ├── process-tools-hero.jpg
+    │   │   ├── leasing-partners-hero.jpg
+    │   │   └── more-resources-hero.jpg
+    │   └── icons/                # UI icons
+    │
+    ├── pdfs/                     # All official KMPF PDFs
+    │   └── (all official KMPF learning documents)
+    │
+    └── data/                     # JSON data files
+        ├── glossary.json
+        ├── lease_types.json
+        ├── objections.json
+        └── scenarios.json
 ```
 
 ---
