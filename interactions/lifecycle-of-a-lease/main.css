@@ -1,0 +1,69 @@
+/* Make slices feel interactive */
+#lifecycle-wheel g {
+  pointer-events: auto;
+}
+
+#lifecycle-wheel g.slice-hotspot {
+  cursor: pointer;
+  transition: transform 0.15s ease-out, filter 0.15s ease-out;
+}
+
+#lifecycle-wheel g.slice-hotspot:hover {
+  transform: scale(1.02);
+  filter: brightness(1.05);
+}
+
+/* Modal overlay */
+.slice-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.slice-modal-overlay.is-visible {
+  display: flex;
+}
+
+/* Modal dialog */
+.slice-modal-dialog {
+  background: #ffffff;
+  max-width: 640px;
+  width: 90%;
+  padding: 1.5rem 1.75rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+  position: relative;
+  max-height: 80vh;
+  overflow-y: auto;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+}
+
+.slice-modal-dialog h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+/* Close button */
+.slice-modal-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.8rem;
+  border: none;
+  background: transparent;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* Mobile tweaks */
+@media (max-width: 600px) {
+  .slice-modal-dialog {
+    padding: 1.25rem 1.25rem;
+  }
+}
