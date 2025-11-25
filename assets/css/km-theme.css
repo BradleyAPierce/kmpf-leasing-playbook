@@ -230,6 +230,25 @@ body {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
 }
 
+/* Section intro headers - left aligned with consistent spacing */
+.section-intro {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.section-intro h2 {
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.section-intro .lead {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--bs-body-color);
+  opacity: 0.9;
+  max-width: 100%;
+}
+
 /* -------------------------
    Footer (always KM brand)
    ------------------------- */

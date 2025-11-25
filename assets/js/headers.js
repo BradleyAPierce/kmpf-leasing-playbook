@@ -28,42 +28,42 @@ const HERO_CONFIG = {
   },
 
   "lease-types": {
-    img: CDN + "KMPF_Home_Banner.jpg",
+    img: CDN + "lease-types.jpg",
     title: "Lease Types & Positioning",
     subtitle:
       "Learn when to position FMV, $1 Out, TELP, and bundled options to support customer outcomes.",
   },
 
   conversations: {
-    img: CDN + "KMPF_Home_Banner.jpg",
+    img: CDN + "customer-conversations.jpg",
     title: "Customer Conversations",
     subtitle:
       "Use discovery questions, talk tracks, and sales frameworks to lead confident leasing conversations.",
   },
 
   objections: {
-    img: CDN + "KMPF_Home_Banner.jpg",
+    img: CDN + "objections.jpg",
     title: "Objections & Competitive",
     subtitle:
       "Anticipate and handle common objections while positioning KMPF against cash and bank competition.",
   },
 
   "process-tools": {
-    img: CDN + "KMPF_Home_Banner.jpg",
+    img: CDN + "process-tools.jpg",
     title: "KMPF Process & Tools",
     subtitle:
       "Follow the Life Cycle of a Lease and understand the tools and systems that support every step.",
   },
 
   "leasing-partners": {
-    img: CDN + "KMPF_Home_Banner.jpg",
+    img: CDN + "leasing-partners.jpg",
     title: "KMPF Lease Partners",
     subtitle:
       "Meet your leasing partners and learn how to collaborate with them to support your deals.",
   },
 
   "more-resources": {
-    img: CDN + "KMPF_Home_Banner.jpg",
+    img: CDN + "more-resources.jpg",
     title: "More Resources",
     subtitle:
       "Quick access to glossaries, job aids, battlecards, and supporting reference materials.",
