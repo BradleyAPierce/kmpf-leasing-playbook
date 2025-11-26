@@ -489,9 +489,3 @@ html[data-theme="dark"] .hero-image {
   background-color: #d31887;
 }
 
-/* Note:
-   - Navbar stays KM Blue (navbar-km)
-   - Breadcrumb stays Cool Gray
-   - Footer stays Cool Gray
-   by NOT overriding them here.
-*/

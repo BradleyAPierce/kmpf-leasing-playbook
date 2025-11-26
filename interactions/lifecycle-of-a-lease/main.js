@@ -1,89 +1,93 @@
+// main.js
 document.addEventListener("DOMContentLoaded", () => {
-  // Get all SVG groups with data-slice attribute
-  const sliceHotspots = document.querySelectorAll("[data-slice]");
+  // SVG slice ids from your wheel
+  const sliceIds = [
+    "Identify_Opportunity",
+    "Create_Opportunity",
+    "Customer_Credit_Worthiness",
+    "Review_Credit_Decision",
+    "Type_of_Lease",
+    "Build_Quote",
+    "Submit_Paperwork",
+    "Lease_Documents",
+    "Ship_and_Fund",
+    "Need_for_Bundled_Lease",
+    "Installation_and_Invoicing",
+    "Customer_Follow_Up",
+    "Present_Lease_Options",
+  ];
 
-  // Get all modal overlays
-  const modalOverlays = document.querySelectorAll(".slice-modal-overlay");
+  const modal = document.getElementById("slice-modal");
+  const modalTitle = document.getElementById("slice-modal-title");
+  const modalBody = document.getElementById("slice-modal-body");
 
-  if (sliceHotspots.length === 0) {
-    console.warn(
-      "No slice hotspots found. Make sure SVG elements have data-slice attributes."
-    );
+  if (!modal || !modalTitle || !modalBody) {
+    console.error("Modal markup not found in the page.");
     return;
   }
 
-  // Add click handlers to each slice
-  sliceHotspots.forEach(function (slice) {
-    // Make it feel interactive
+  function openModal(sliceId) {
+    // Find the hidden template block for this slice
+    const template = document.getElementById("slice-content-" + sliceId);
+
+    if (!template) {
+      // Fallback if you don’t have content yet
+      modalTitle.textContent = sliceId.replace(/_/g, " ");
+      modalBody.innerHTML = "<p>Content coming soon for this step.</p>";
+    } else {
+      const heading = template.querySelector("h3");
+      modalTitle.textContent =
+        heading?.textContent || sliceId.replace(/_/g, " ");
+      modalBody.innerHTML = template.innerHTML;
+    }
+
+    modal.classList.add("is-visible");
+    modal.setAttribute("aria-hidden", "false");
+  }
+
+  function closeModal() {
+    modal.classList.remove("is-visible");
+    modal.setAttribute("aria-hidden", "true");
+  }
+
+  // Attach handlers to each SVG slice by id
+  sliceIds.forEach((id) => {
+    const slice = document.getElementById(id);
+    if (!slice) {
+      console.warn("No SVG element found with id:", id);
+      return;
+    }
+
+    // Make it feel like a button
     slice.classList.add("slice-hotspot");
-    slice.style.cursor = "pointer";
-
-    slice.addEventListener("click", function () {
-      const sliceName = this.getAttribute("data-slice");
-      console.log("Slice clicked:", sliceName); // Debug log
-      openModal(sliceName);
-    });
-
-    // Keyboard accessibility
     slice.setAttribute("tabindex", "0");
     slice.setAttribute("role", "button");
+    slice.setAttribute("aria-label", id.replace(/_/g, " "));
 
-    slice.addEventListener("keydown", function (e) {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        const sliceName = this.getAttribute("data-slice");
-        openModal(sliceName);
+    slice.addEventListener("click", () => openModal(id));
+
+    slice.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openModal(id);
       }
     });
   });
 
-  // Add click handlers to close buttons and overlays
-  modalOverlays.forEach(function (overlay) {
-    // Close when clicking the overlay background
-    overlay.addEventListener("click", function (e) {
-      if (e.target === overlay) {
-        closeModal(overlay);
-      }
-    });
-
-    // Close when clicking the close button
-    const closeBtn = overlay.querySelector(".slice-modal-close");
-    if (closeBtn) {
-      closeBtn.addEventListener("click", function () {
-        closeModal(overlay);
-      });
+  // Clicking overlay background or close button closes modal
+  modal.addEventListener("click", (event) => {
+    if (
+      event.target === modal ||
+      event.target.hasAttribute("data-close-modal")
+    ) {
+      closeModal();
     }
   });
 
-  // Close modals on ESC key
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") {
-      closeAllModals();
+  // ESC closes modal
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && modal.classList.contains("is-visible")) {
+      closeModal();
     }
   });
-
-  // Function to open a specific modal
-  function openModal(sliceName) {
-    const modal = document.getElementById("modal-" + sliceName);
-    if (modal) {
-      console.log("Opening modal:", "modal-" + sliceName); // Debug log
-      modal.classList.add("is-visible");
-      document.body.style.overflow = "hidden"; // Prevent background scrolling
-    } else {
-      console.error("Modal not found:", "modal-" + sliceName);
-    }
-  }
-
-  // Function to close a specific modal
-  function closeModal(modal) {
-    modal.classList.remove("is-visible");
-    document.body.style.overflow = ""; // Restore scrolling
-  }
-
-  // Function to close all modals
-  function closeAllModals() {
-    modalOverlays.forEach(function (overlay) {
-      closeModal(overlay);
-    });
-  }
 });
