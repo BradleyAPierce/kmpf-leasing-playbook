@@ -235,6 +235,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "process-tools": "content-modules/content-process-tools.html",
       "leasing-partners": "content-modules/content-leasing-partners.html",
       "more-resources": "content-modules/content-more-resources.html",
+      lifecycle: "content-modules/content-lifecycle/index.html",
     };
 
     const contentPath = contentMap[pageId];
