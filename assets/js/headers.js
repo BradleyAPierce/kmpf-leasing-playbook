@@ -27,6 +27,13 @@ const HERO_CONFIG = {
       "Build your baseline understanding of leasing, KMPF, and key financial concepts every sales rep should know.",
   },
 
+  lifecycle: {
+    img: CDN + "foundations.jpg",
+    title: "Lifecycle of a Lease",
+    subtitle:
+      "Build your understanding of the Lifecycle of a Lease and key concepts every sales rep should know.",
+  },
+
   "lease-types": {
     img: CDN + "lease-types.jpg",
     title: "Lease Types & Positioning",

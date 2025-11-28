@@ -489,3 +489,24 @@ html[data-theme="dark"] .hero-image {
   background-color: #d31887;
 }
 
+.sub-head-yellow {
+  color: #ffa818;
+  font-weight: bold;
+}
+
+.bold-italic {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+.body-bold {
+  font-weight: bold;
+  font-size: 0.925em;
+}
+
+.body-bold-red {
+  color: #ff0000;
+  font-weight: bold;
+  font-size: 0.925em;
+}
