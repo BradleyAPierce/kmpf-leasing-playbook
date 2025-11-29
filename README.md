@@ -1,153 +1,160 @@
 # KMPF Leasing Playbook
 
-**Konica Minolta Premier Finance — Sales Enablement Website**
-
-The KMPF Leasing Playbook is the single source of truth for all leasing-related learning, tools, job aids, and sales resources used by Konica Minolta Direct Sales Representatives. This site is built as a fully responsive Bootstrap 5 website with KM-branded theming and reusable components for consistency, scalability, and maintainability.
+The **KMPF Leasing Playbook** is a modular, component-driven learning and sales enablement resource designed to support Konica Minolta sales representatives, managers, and instructional designers. It centralizes all leasing concepts, tools, glossary definitions, job aids, and sales conversation frameworks into one accessible, professional, and scalable web-based experience.
 
 ---
 
-## Purpose
+## ⭐ Purpose of the Playbook
 
-This playbook provides:
+This playbook aims to:
 
-- Leasing fundamentals and key concepts
-- Detailed lease type explanations
-- Discovery questions and customer conversation frameworks
-- Objection handling and competitive positioning
-- Full KMPF process & tools overview
-- Direct access to official job aids, PDFs, and partner contacts
-- A centralized, mobile-friendly learning and reference experience for sales reps
+- Strengthen leasing knowledge across the Direct Sales organization  
+- Improve understanding of payment streams, tools, and leasing pathways  
+- Support consistent sales messaging and customer conversations  
+- Ensure accurate and unified training across teams  
+- Provide a reusable, scalable template for future KM playbooks  
 
 ---
 
-## Technology Stack
+## 📁 Repository Structure
 
-- HTML5, CSS3, JavaScript (ES6+)
-- Bootstrap 5.3 (responsive, mobile-first)
-- KM Brand Theme Overrides (km-theme.css)
-- Reusable components injected via JavaScript (nav, breadcrumb, footer)
-- JSON-driven content for glossary, lease types, objections, and scenarios
-- GitHub Pages compatible
-
----
-
-## Project Structure
-
+```
 kmpf-leasing-playbook/
 │
 ├── index.html
-├── README.md
-├── docs/
-│ └── instructions.md
 │
-├── components/
-│ ├── nav.html
-│ ├── breadcrumb.html
-│ └── footer.html
+├── components/          # Global shared elements (nav, breadcrumb, hero, footer)
 │
-├── modules/
-│ ├── foundations.html
-│ ├── lease-types.html
-│ ├── conversations.html
-│ ├── objections.html
-│ ├── process-tools.html
-│ ├── leasing-partners.html
-│ └── more-resources.html
+├── modules/             # Topic-based content sections
+│   ├── glossary/
+│   ├── lifecycle/
+│   ├── enablement/
+│   └── key-concepts/
 │
 ├── assets/
-│ ├── css/
-│ │ ├── km-theme.css # KM Brand Bootstrap overrides
-│ │ └── styles.css # Optional additional styles
-│ │
-│ ├── js/
-│ │ └── main.js # Component injection + behaviors
-│ │
-│ ├── images/
-│ │ ├── headers/ # Hero images (top banners)
-│ │ └── icons/ # UI icons (optional)
-│ │
-│ ├── pdfs/ # All official KMPF learning documents
-│ │
-│ └── data/ # JSON-driven interactive content
-│ ├── glossary.json
-│ ├── lease_types.json
-│ ├── objections.json
-│ └── scenarios.json
+│   ├── css/             # Global styling
+│   └── js/              # Interactivity + component injection
 │
-└── .gitignore
+└── docs/
+    ├── instructions.md  # Full engineering documentation
+    ├── instructions_style3.md
+    └── other internal docs
+```
 
 ---
 
-## KM Brand Colors
+## 🧩 How the Playbook Works
 
-Primary:
+This playbook uses a **component injection system**. Global elements (navigation, footer, hero header, breadcrumb) are dynamically loaded into each page via JavaScript.
 
-- KM Blue #0062C2
-- White #FFFFFF
-- Black #000000
-- Cool Gray #E5E3DF
-- Light Green #C1E5F4
-- Light Blue #BEE2DD
+This ensures:
 
-Secondary:
-
-- Pink #C0167B
-- Gold #CEA100
-- Purple #826FB0
-- Turquoise #009EB7
+- Consistency across all modules  
+- Centralized updates (one change updates all pages)  
+- Reduced duplication and maintenance time  
+- A professional, unified user experience  
 
 ---
 
-## Component Injection
+## 🛠 Key Technologies
 
-Components are injected using main.js to maintain global consistency.
-
----
-
-## Page Content Structure
-
-Each module page includes:
-
-- Hero image banner with overlay
-- Breadcrumb navigation
-- Bootstrap container layout
-- KM-branded cards and CTAs
-- PDF downloads
+- **HTML** for modular page structure  
+- **CSS** for layout, theme, and standardized KM styling  
+- **JavaScript** for loading components and handling interactivity  
+- **GitHub CDN** for images and asset hosting  
+- **Modular folder structure** for scalability and clarity  
 
 ---
 
-## Responsive Design
+## 📚 Documentation
 
-Supports desktop, tablet, and mobile using Bootstrap grid.
+### **Engineering Documentation (Style 1)**  
+Provides full system architecture, component logic, coding conventions, and developer guidance.  
+Located at:  
+`/docs/instructions.md`
 
----
-
-## JSON-Powered Content
-
-Interactive content uses glossary.json, lease_types.json, objections.json, and scenarios.json.
-
----
-
-## Deployment
-
-- GitHub Pages
-- KM Internal Hosting
-- Vercel/Netlify
+### **Enterprise Playbook Documentation (Style 3)**  
+Instructional, non-technical resource for content creators and stakeholders.  
+Located at:  
+`/docs/instructions_style3.md`
 
 ---
 
-## Contributing
+## ✨ Creating New Pages or Modules
 
-Follow instructions.md and KM brand theme guidelines.
+To create new content:
+
+1. Duplicate an existing module page  
+2. Update the main content section (keep component placeholders)  
+3. Add images using GitHub-hosted links  
+4. Follow formatting rules and KM style guidelines  
+5. Test in browser to ensure components load correctly  
 
 ---
 
-## License
+## 🎨 Design Principles & Standards
 
-Internal Konica Minolta use only.
+- Clean, structured layout  
+- Consistent spacing and visual hierarchy  
+- Concise, readable content  
+- KM brand-aligned colors and fonts  
+- Reusable components and patterns  
+
+For detailed rules, see:  
+`/docs/instructions.md` and `/docs/instructions_style3.md`
 
 ---
 
-## Maintainers
+## 🔧 Development Workflow
 
-- Instructional Design Lead: Bradley Pierce
+### Branching
+```
+feature/<feature-name>
+fix/<bug-name>
+update/<module-name>
+```
+
+### Commits
+Use descriptive, structured commit messages:
+```
+[module] - action: description
+```
+
+### Pull Process
+1. Pull latest main  
+2. Work in a feature branch  
+3. Test locally  
+4. Open PR when stable  
+
+---
+
+## 🧪 Testing
+
+Before pushing changes:
+
+- Confirm all components load correctly  
+- Ensure mobile and desktop layouts function properly  
+- Verify image links  
+- Test navigation pathways  
+- Review content for clarity and accuracy  
+
+---
+
+## 🆘 Support & Maintenance
+
+This project supports ongoing updates. Content should be refreshed when:
+
+- Leasing terminology changes  
+- New tools or job aids are released  
+- Pricing, processes, or policy changes occur  
+- New training or sales initiatives launch  
+
+For technical changes, refer to the engineering documentation.
+
+---
+
+## © Konica Minolta Business Solutions U.S.A., Inc.
+
+This playbook is a proprietary internal learning asset.  
+All rights reserved.
+
