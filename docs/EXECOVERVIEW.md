@@ -1,4 +1,4 @@
-# KMPF Leasing Playbook — Enterprise Playbook Documentation (Style 3)
+# KMPF Leasing Playbook — Enterprise Playbook Documentation
 
 ## 1. Purpose of This Document
 The KMPF Leasing Playbook is a core learning and sales enablement resource designed to support Konica Minolta sales teams, managers, instructional designers, and business stakeholders. This document explains how the playbook is structured, how each part functions, and how teams can consistently expand and maintain the playbook without introducing errors, visual inconsistencies, or off‑brand content.
