@@ -505,6 +505,18 @@ html[data-theme="dark"] .hero-image {
   font-size: 0.925em;
 }
 
+.body-bold-blue {
+  color: #0062c2;
+  font-weight: bold;
+  font-size: 0.925em;
+}
+
+.body-bold-pink {
+  color: #d31887;
+  font-weight: bold;
+  font-size: 0.925em;
+}
+
 .body-bold-red {
   color: #ff0000;
   font-weight: bold;
@@ -527,4 +539,161 @@ html[data-theme="dark"] .hero-image {
 .lifecycle-wheel-img {
   transition: transform 0.6s ease;
   display: block;
+}
+
+/* Centers any image within its parent column (vertical + horizontal) */
+.km-img-thumbnail-center {
+  display: flex;
+  align-items: center; /* vertical centering */
+  justify-content: center; /* horizontal centering */
+}
+
+.km-img-thumbnail-center img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Global KM rounded image utility */
+.km-img-rounded img {
+  border-radius: 12px; /* Adjust to your preferred curvature */
+  overflow: hidden;
+}
+
+/* ------------------------------------- */
+/* KM CLEAN TABLE (NO BORDERS)           */
+/* ------------------------------------- */
+.km-table-clean,
+.km-table-clean th,
+.km-table-clean td {
+  border: none !important;
+}
+
+.km-table-clean th,
+.km-table-clean td {
+  padding: 14px 16px;
+}
+
+/* ------------------------------------- */
+/* HEADER ROW – BLUE BACKGROUND          */
+/* ------------------------------------- */
+.km-table-header,
+.km-table-header tr {
+  background-color: var(--km-blue, #0b3d91) !important;
+}
+
+.km-table-header th {
+  color: var(--km-white, #ffffff) !important;
+  font-weight: 600;
+}
+
+/* ------------------------------------- */
+/* BODY TEXT — LIGHT & DARK THEME SAFE   */
+/* ------------------------------------- */
+.km-table-clean tbody td {
+  color: var(--km-body-text, #1a1a1a);
+}
+
+html[data-theme="dark"] .km-table-clean tbody td {
+  color: var(--km-dark-text, #e6e6e6);
+}
+
+/* ------------------------------------- */
+/* IMPORTANT NOTICE BAR (RED + WHITE)    */
+/* ------------------------------------- */
+.km-table-important {
+  margin-top: 10px;
+  background-color: var(--km-red, #b81c1c);
+  color: var(--km-white, #ffffff);
+  padding: 12px 18px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+/* FORCE KM BLUE TABLE HEADER */
+table.km-table-clean thead.km-table-header,
+table.km-table-clean thead.km-table-header tr,
+table.km-table-clean thead.km-table-header th {
+  background-color: var(--km-blue, #0b3d91) !important;
+  color: var(--km-white, #ffffff) !important;
+}
+
+.km-h5-pink {
+  color: var(--km-pink);
+}
+
+.km-h5-blue {
+  color: var(--km-blue);
+}
+
+.km-h6-pink {
+  color: var(--km-pink);
+}
+
+.km-h6-blue {
+  color: var(--km-blue);
+}
+
+h5.km-h5-pink,
+h5.km-h5-blue {
+  font-weight: 700;
+}
+
+h6.km-h6-pink,
+h6.km-h6-blue {
+  font-weight: 700;
+}
+
+/* ------------------------------------------------------ */
+/* KM CHECKLIST BOX COMPONENT                             */
+/* ------------------------------------------------------ */
+.km-checklist-box {
+  background-color: var(--km-blue, #0b3d91);
+  border: 4px solid var(--km-pink, #e6007e);
+  border-radius: 20px;
+  padding: 24px 28px;
+  margin: 20px 0;
+  color: var(--km-white, #ffffff);
+}
+
+/* Dark mode override */
+html[data-theme="dark"] .km-checklist-box {
+  background-color: #0d2a52; /* darker KM blue */
+  border-color: var(--km-pink, #e6007e);
+  color: var(--km-dark-text, #e6e6e6);
+}
+
+/* ------------------------------------------------------ */
+/* KM CHECKMARK LIST                                      */
+/* ------------------------------------------------------ */
+.km-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.km-checklist li {
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 12px;
+  line-height: 1.45;
+  font-size: 1rem;
+  color: inherit; /* inherits white or dark-text */
+}
+
+/* Checkmark pseudo-element */
+.km-checklist li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--km-white, #ffffff);
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/* Dark theme checkmark color */
+html[data-theme="dark"] .km-checklist li::before {
+  color: var(--km-dark-text, #e6e6e6);
 }
