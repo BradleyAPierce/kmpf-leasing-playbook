@@ -148,26 +148,28 @@
     padding-left 150ms ease-out, box-shadow 150ms ease-out;
 }
 
+/* Hover = very soft highlight */
 .km-aside-nav-link:hover {
-  background: var(--km-nav-bg-hover);
+  background: rgba(255, 255, 255, 0.08);
 }
 
-/* Active state */
+/* Active state = subtle pill, no heavy outline */
 .km-aside-nav-link.is-active {
-  background: var(--km-nav-bg-active);
-  box-shadow: 0 0 0 1px rgba(0, 98, 194, 0.9);
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: none;
 }
 
-/* Active left bar accent */
+/* Active left bar accent = slim white bar, vertically centered */
 .km-aside-nav-link.is-active::before {
   content: "";
   position: absolute;
   left: 0.35rem;
-  top: 6px;
-  bottom: 6px;
+  top: 50%;
+  transform: translateY(-50%);
   width: 3px;
+  height: 60%;
   border-radius: 999px;
-  background: var(--km-brand-blue);
+  background: #ffffff;
 }
 
 /* Number badge */
@@ -183,6 +185,17 @@
   font-weight: 600;
   background: var(--km-nav-pill-bg);
   box-shadow: 0 0 0 1px var(--km-nav-pill-border);
+}
+
+/* Invert badge + bump weight for active item */
+.km-aside-nav-link.is-active .km-aside-nav-index {
+  background: #ffffff;
+  color: var(--km-brand-blue);
+  box-shadow: none;
+}
+
+.km-aside-nav-link.is-active .km-aside-nav-label {
+  font-weight: 600;
 }
 
 /* Label text */
