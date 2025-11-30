@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>KMPF Leasing Playbook — Aside Nav Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet" />
+
+    <!-- KM Theme CSS (same as index.html, but paths adjusted for /modules) -->
+    <link rel="stylesheet" href="../assets/css/km-theme.css" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
+
+  <!-- For now, treat this as an "Overview" / home test page -->
+  <body data-page-id="home" data-page-label="Aside Nav Test – Overview">
+    <div class="playbook-shell d-flex">
+      <!-- LEFT: Aside nav will be injected here in the next step -->
+      <div id="aside-nav-container"></div>
+
+      <!-- RIGHT: Main content area -->
+      <div class="flex-grow-1">
+        <!-- Simple header so you know you’re on the test page -->
+        <header class="border-bottom py-3 mb-3">
+          <div class="container">
+            <p class="text-uppercase small text-muted mb-1">
+              Prototype &bull; Aside Navigation
+            </p>
+            <h1 class="h3 mb-0">
+              KMPF Leasing Playbook – Aside Nav Layout Test
+            </h1>
+            <p class="text-muted mb-0">
+              This page is a proof-of-concept to explore replacing the top nav
+              with a left-hand aside navigation using real KMPF leasing modules.
+            </p>
+          </div>
+        </header>
+
+        <!-- MAIN CONTENT (re-using your "Explore Learning Modules" idea) -->
+        <main class="page container py-4">
+          <section class="content-section mb-5">
+            <div class="section-intro mb-4">
+              <h2>Explore the Learning Modules</h2>
+              <p class="lead">
+                Navigate through the key KMPF Leasing modules using the
+                left-hand navigation. Each module builds your leasing expertise
+                and provides practical tools, talk tracks, and job aids.
+              </p>
+            </div>
+
+            <div class="row g-4" id="kmpfindexintrocards">
+              <!-- FOUNDATIONS -->
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="card card-km h-100">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/BradleyAPierce/KMPF_Images/foundations.jpg"
+                    class="card-img-top"
+                    alt="Foundations module cover image" />
+                  <div class="card-body">
+                    <h5 class="card-title">Foundations</h5>
+                    <p class="card-text">
+                      Learn core leasing concepts, the why behind KMPF, and the
+                      terminology you’ll see in everyday conversations.
+                    </p>
+                    <a href="foundations.html" class="btn btn-primary">
+                      Go to Foundations
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- LEASE TYPES -->
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="card card-km h-100">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/BradleyAPierce/KMPF_Images/lease-types.jpg"
+                    class="card-img-top"
+                    alt="Lease types module cover image" />
+                  <div class="card-body">
+                    <h5 class="card-title">Lease Types &amp; Positioning</h5>
+                    <p class="card-text">
+                      Explore key lease structures like FMV and $1 Out and how
+                      to position them based on your customer’s goals.
+                    </p>
+                    <a href="lease-types.html" class="btn btn-primary">
+                      Explore Lease Types
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- LIFECYCLE OF A LEASE -->
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="card card-km h-100">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/BradleyAPierce/KMPF_Images/lifecycle.jpg"
+                    class="card-img-top"
+                    alt="Lifecycle of a lease module cover image" />
+                  <div class="card-body">
+                    <h5 class="card-title">Lifecycle of a Lease</h5>
+                    <p class="card-text">
+                      Follow the journey from initial opportunity through
+                      funding, billing, and end-of-term options.
+                    </p>
+                    <a href="lifecycle-of-a-lease.html" class="btn btn-primary">
+                      View Lifecycle of a Lease
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CUSTOMER CONVERSATIONS -->
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="card card-km h-100">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/BradleyAPierce/KMPF_Images/customer-conversations.jpg"
+                    class="card-img-top"
+                    alt="Customer conversations module cover image" />
+                  <div class="card-body">
+                    <h5 class="card-title">Customer Conversations</h5>
+                    <p class="card-text">
+                      Master discovery questions, objection handling, and talk
+                      tracks that move leasing deals forward.
+                    </p>
+                    <a href="conversations.html" class="btn btn-primary">
+                      View Conversations
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- OBJECTIONS & COMPETITIVE -->
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="card card-km h-100">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/BradleyAPierce/KMPF_Images/objections.jpg"
+                    class="card-img-top"
+                    alt="Objections module cover image" />
+                  <div class="card-body">
+                    <h5 class="card-title">Objections &amp; Competitive</h5>
+                    <p class="card-text">
+                      Get equipped to respond to price, terms, and competitive
+                      leasing objections with confidence.
+                    </p>
+                    <a href="objections.html" class="btn btn-primary">
+                      Handle Objections
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PROCESS & TOOLS -->
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="card card-km h-100">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/BradleyAPierce/KMPF_Images/process-tools.jpg"
+                    class="card-img-top"
+                    alt="Process and tools module cover image" />
+                  <div class="card-body">
+                    <h5 class="card-title">KMPF Process &amp; Tools</h5>
+                    <p class="card-text">
+                      Learn how to move a deal from quote to funding using KMPF
+                      tools, forms, and best practices.
+                    </p>
+                    <a href="process-tools.html" class="btn btn-primary">
+                      Go to Process &amp; Tools
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- LEASING PARTNERS -->
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="card card-km h-100">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/BradleyAPierce/KMPF_Images/leasing-partners.jpg"
+                    class="card-img-top"
+                    alt="Leasing partners module cover image" />
+                  <div class="card-body">
+                    <h5 class="card-title">KMPF Lease Partners</h5>
+                    <p class="card-text">
+                      Understand who your KMPF partners are and when to bring
+                      them into customer conversations.
+                    </p>
+                    <a href="leasing-partners.html" class="btn btn-primary">
+                      Meet the KMPF Team
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- MORE RESOURCES -->
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="card card-km h-100">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/BradleyAPierce/KMPF_Images/more-resources.jpg"
+                    class="card-img-top"
+                    alt="More resources module cover image" />
+                  <div class="card-body">
+                    <h5 class="card-title">More Resources</h5>
+                    <p class="card-text">
+                      Access downloadable PDFs, sales aids, and additional
+                      reference content to reinforce your learning.
+                    </p>
+                    <a href="more-resources.html" class="btn btn-primary">
+                      Browse Resources
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end row -->
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- NEXT STEP: we'll create this file and wire it up -->
+    <script src="../assets/js/aside-nav.js"></script>
+  </body>
+</html>

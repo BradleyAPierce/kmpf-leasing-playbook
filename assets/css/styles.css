@@ -1,1 +1,235 @@
-/* Optional additional styles */
+/* ===========================================================
+   KMPF Leasing — Aside Navigation Layout & Styles (POC)
+   Brand-aligned with KM colors
+   =========================================================== */
+
+/* Local brand tokens for the nav (using KM palette) */
+:root {
+  --km-brand-blue: #0062c2;
+  --km-brand-pink: #c0167b;
+  --km-brand-gold: #cea100;
+  --km-brand-purple: #826fb0;
+
+  --km-nav-bg-dark: #050816;
+  --km-nav-bg-hover: #081123;
+  --km-nav-bg-active: #0e1a33;
+  --km-nav-border: rgba(0, 0, 0, 0.7);
+
+  --km-nav-text-primary: #f5f7ff;
+  --km-nav-text-muted: #a3aacf;
+
+  --km-nav-pill-bg: rgba(0, 98, 194, 0.16);
+  --km-nav-pill-border: rgba(0, 98, 194, 0.65);
+  --km-surface: #ffffff;
+}
+
+/* Layout shell: aside + main content */
+.playbook-shell {
+  min-height: 100vh;
+}
+
+/* Left column where the aside nav lives */
+#aside-nav-container {
+  flex: 0 0 260px; /* default expanded width */
+}
+
+/* Main content flex behavior (right side) */
+.playbook-shell > .flex-grow-1 {
+  min-width: 0;
+}
+
+/* ----------------- ASIDE NAV CORE ----------------- */
+
+.km-aside-nav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--km-brand-blue);
+  color: var(--km-surface);
+  border-right: 1px solid var(--km-nav-border);
+  padding: 0.75rem 0.75rem 1rem;
+}
+
+/* Header: title + toggle */
+.km-aside-nav-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.25rem 0.25rem 0.75rem;
+  border-bottom: 1px solid rgba(0, 98, 194, 0.4); /* KM blue accent */
+  margin-bottom: 0.75rem;
+}
+
+.km-aside-nav-title {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.km-aside-nav-title-main {
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.km-aside-nav-title-sub {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--km-nav-text-muted);
+}
+
+/* Toggle button */
+.km-aside-nav-toggle {
+  border: none;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--km-nav-text-primary);
+  border-radius: 999px;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+  box-shadow: 0 0 0 1px rgba(0, 98, 194, 0.7);
+  transition: background 160ms ease-out, transform 160ms ease-out,
+    box-shadow 160ms ease-out;
+}
+
+.km-aside-nav-toggle:hover {
+  background: rgba(0, 98, 194, 0.25); /* KM blue tint */
+  transform: translateY(-1px);
+}
+
+.km-aside-nav-toggle:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 98, 194, 0.9);
+}
+
+.km-aside-nav-toggle-icon {
+  display: inline-block;
+  transition: transform 160ms ease-out;
+}
+
+/* ----------------- NAV LIST ----------------- */
+
+.km-aside-nav-body {
+  padding-top: 0.5rem;
+  overflow-y: auto;
+}
+
+.km-aside-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.km-aside-nav-item {
+  margin-bottom: 0.15rem;
+}
+
+.km-aside-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.4rem 0.65rem;
+  border-radius: 999px;
+  color: var(--km-nav-text-primary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  position: relative;
+  transition: background 150ms ease-out, color 150ms ease-out,
+    padding-left 150ms ease-out, box-shadow 150ms ease-out;
+}
+
+.km-aside-nav-link:hover {
+  background: var(--km-nav-bg-hover);
+}
+
+/* Active state */
+.km-aside-nav-link.is-active {
+  background: var(--km-nav-bg-active);
+  box-shadow: 0 0 0 1px rgba(0, 98, 194, 0.9);
+}
+
+/* Active left bar accent */
+.km-aside-nav-link.is-active::before {
+  content: "";
+  position: absolute;
+  left: 0.35rem;
+  top: 6px;
+  bottom: 6px;
+  width: 3px;
+  border-radius: 999px;
+  background: var(--km-brand-blue);
+}
+
+/* Number badge */
+.km-aside-nav-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: var(--km-nav-pill-bg);
+  box-shadow: 0 0 0 1px var(--km-nav-pill-border);
+}
+
+/* Label text */
+.km-aside-nav-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--km-nav-text-primary);
+}
+
+/* ----------------- COLLAPSED STATE ----------------- */
+
+/* Narrow the whole aside column when collapsed */
+body.nav-collapsed #aside-nav-container {
+  flex-basis: 72px;
+}
+
+/* Hide title + labels in collapsed state */
+body.nav-collapsed .km-aside-nav-title,
+body.nav-collapsed .km-aside-nav-label {
+  display: none;
+}
+
+/* Center items more in collapsed state */
+body.nav-collapsed .km-aside-nav-link {
+  justify-content: center;
+  padding-right: 0;
+}
+
+/* Rotate toggle icon for visual feedback */
+body.nav-collapsed .km-aside-nav-toggle-icon {
+  transform: rotate(180deg);
+}
+
+/* ----------------- BASIC RESPONSIVE FALLBACK ----------------- */
+
+@media (max-width: 768px) {
+  .playbook-shell {
+    flex-direction: column;
+  }
+
+  #aside-nav-container {
+    flex-basis: auto;
+  }
+
+  .km-aside-nav {
+    position: relative;
+    min-height: auto;
+  }
+}
