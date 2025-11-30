@@ -6,28 +6,27 @@ html,
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     sans-serif;
   background-color: #ffffff;
 }
 
+/* Container for the lifecycle wheel */
 #lifecycle-wheel-section {
-  /* Let the wheel section size itself to its content instead of filling the entire viewport. */
+  /* Let the wheel section size itself to its content instead of filling the viewport */
   box-sizing: border-box;
-  padding: 0.75rem 0 1.5rem; /* compact top/bottom spacing */
-  display: flex;
-  justify-content: center; /* center horizontally only */
+  margin: 0 auto;
+  padding: 0;
+  max-width: 960px; /* tweak this if you want the wheel narrower/wider */
+  display: block;
 }
 
-/* Make the SVG responsive but centered nicely */
+/* The wheel SVG */
 #lifecycle-wheel-section svg {
-  /* The wheel should use more of the available width but remain responsive. */
-  max-width: 900px;      /* adjust between 800–1000px if you want it smaller/larger */
-  width: 100%;
-  height: auto;
   display: block;
-  margin: 0 auto;        /* ensures the SVG stays centered in flexible layouts */
+  width: 100%; /* fill the container width */
+  max-width: 100%; /* no extra side gaps beyond the container */
+  height: auto;
 }
 
 /* ================================
