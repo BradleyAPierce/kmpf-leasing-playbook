@@ -180,14 +180,27 @@ body {
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
+/* Inner breadcrumb row */
 .breadcrumb-nav .breadcrumb {
-  margin-bottom: 0;
+  margin: 0; /* remove default bottom margin */
+  padding: 0.6rem 1.5rem; /* base horizontal breathing room */
 }
 
+/* Slightly more generous padding on larger screens so it lines up
+   visually with the hero/content column even when the aside is expanded */
+@media (min-width: 768px) {
+  .breadcrumb-nav .breadcrumb {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+/* Divider color */
 .breadcrumb-nav .breadcrumb-item + .breadcrumb-item::before {
   color: #666666;
 }
 
+/* Links */
 .breadcrumb-nav a {
   color: var(--km-blue);
   text-decoration: none;

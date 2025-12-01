@@ -4,6 +4,7 @@
 // - Highlights the active page based on body[data-page-id]
 // - Handles expand/collapse of the aside nav
 // - On the ROOT index.html only, rewrites hrefs so links point to /modules/*.html correctly
+// - On mobile (<= 768px), starts collapsed (hamburger / drawer pattern)
 
 document.addEventListener("DOMContentLoaded", () => {
   const asideContainer = document.getElementById("aside-nav-container");
@@ -40,9 +41,18 @@ function initAsideNav(basePath) {
   const asideRoot = document.querySelector(".km-aside-nav");
   if (!asideRoot) return;
 
-  // Start expanded by default
-  body.classList.add("nav-expanded");
-  body.classList.remove("nav-collapsed");
+  // Decide initial state based on viewport:
+  // - Desktop: expanded rail
+  // - Mobile (<= 768px): collapsed drawer (hamburger)
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+  if (isMobile) {
+    body.classList.add("nav-collapsed");
+    body.classList.remove("nav-expanded");
+  } else {
+    body.classList.add("nav-expanded");
+    body.classList.remove("nav-collapsed");
+  }
 
   // 1) Highlight active page
   if (currentPageId) {
@@ -90,6 +100,13 @@ function initAsideNav(basePath) {
   // 3) Collapse/expand toggle
   const toggleBtn = asideRoot.querySelector("[data-nav-toggle]");
   if (toggleBtn) {
+    // Match the initial state we set above
+    const initiallyExpanded = body.classList.contains("nav-expanded");
+    toggleBtn.setAttribute(
+      "aria-expanded",
+      initiallyExpanded ? "true" : "false"
+    );
+
     toggleBtn.addEventListener("click", () => {
       const isExpanded = body.classList.contains("nav-expanded");
 

@@ -51,6 +51,7 @@
   color: var(--km-surface);
   border-right: 1px solid var(--km-nav-border);
   padding: 0.75rem 0.75rem 1rem;
+  overflow: hidden; /* keep scroll inside the nav body, not the whole aside */
 }
 
 /* Header: title + toggle */
@@ -112,16 +113,30 @@
   box-shadow: 0 0 0 2px rgba(0, 98, 194, 0.9);
 }
 
+/* Hamburger icon inside the toggle */
 .km-aside-nav-toggle-icon {
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
   transition: transform 160ms ease-out;
+}
+
+.km-aside-nav-toggle-bar {
+  width: 14px;
+  height: 2px;
+  border-radius: 999px;
+  background: #ffffff;
 }
 
 /* ----------------- NAV LIST ----------------- */
 
 .km-aside-nav-body {
+  flex: 1 1 auto; /* take remaining height under the header */
   padding-top: 0.5rem;
-  overflow-y: auto;
+  overflow-y: auto; /* scroll *inside* the body */
+  padding-bottom: 0.75rem; /* little breathing room at the bottom */
 }
 
 .km-aside-nav-list {
@@ -207,14 +222,14 @@
   color: var(--km-nav-text-primary);
 }
 
-/* ----------------- COLLAPSED STATE ----------------- */
+/* ----------------- COLLAPSED STATE (DESKTOP RAIL) ----------------- */
 
 /* Narrow the whole aside column when collapsed */
 body.nav-collapsed #aside-nav-container {
   flex-basis: 72px;
 }
 
-/* Hide title + labels in collapsed state */
+/* Hide title + labels in collapsed state (desktop rail) */
 body.nav-collapsed .km-aside-nav-title,
 body.nav-collapsed .km-aside-nav-label {
   display: none;
@@ -231,20 +246,75 @@ body.nav-collapsed .km-aside-nav-toggle-icon {
   transform: rotate(180deg);
 }
 
-/* ----------------- BASIC RESPONSIVE FALLBACK ----------------- */
+/* ----------------- MOBILE: ASIDE AS SLIDE-OUT DRAWER ----------------- */
 
 @media (max-width: 768px) {
+  /* Stack content vertically instead of left/right columns */
   .playbook-shell {
     flex-direction: column;
   }
 
+  /* Let the main content take full width; the drawer is fixed, not in the flex flow */
   #aside-nav-container {
-    flex-basis: auto;
+    flex: 0 0 auto;
   }
 
+  .playbook-shell > .flex-grow-1 {
+    width: 100%;
+  }
+
+  /* Off-canvas drawer for the aside nav */
   .km-aside-nav {
+    position: fixed;
+    top: 0; /* if you want it below the top header later, adjust this */
+    left: 0;
+    width: 260px;
+    max-width: 80vw;
+    height: 100vh;
+    min-height: 0;
+    box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.35);
+    z-index: 1030;
+    transform: translateX(0); /* expanded state */
+    transition: transform 180ms ease-out;
+  }
+
+  /* When collapsed on mobile, slide the drawer almost completely off-screen */
+  body.nav-collapsed .km-aside-nav {
+    transform: translateX(-220px); /* width - a small visible tab */
+  }
+
+  /* On mobile we don't need the narrow 72px rail — main content is always full width */
+  body.nav-collapsed #aside-nav-container {
+    flex-basis: 0;
+  }
+
+  /* Let the body of the nav scroll if there are many items */
+  .km-aside-nav-body {
+    max-height: calc(100vh - 3.5rem);
+    overflow-y: auto;
+  }
+
+  /* Make the toggle act like a little tab that peeks out when collapsed */
+  .km-aside-nav-header {
     position: relative;
-    min-height: auto;
+  }
+
+  body.nav-collapsed .km-aside-nav-toggle {
+    position: absolute;
+    right: -16px; /* half outside the drawer */
+    top: 0.25rem;
+  }
+
+  body.nav-expanded .km-aside-nav-toggle {
+    position: relative;
+    right: 0;
+  }
+
+  /* On mobile, we hide the whole drawer when collapsed,
+     so keep labels/titles normal when it's open */
+  body.nav-collapsed .km-aside-nav-title,
+  body.nav-collapsed .km-aside-nav-label {
+    display: block;
   }
 }
 
