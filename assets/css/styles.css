@@ -1,6 +1,6 @@
 /* ===========================================================
    KMPF Leasing — Aside Navigation Layout & Styles (POC)
-   Brand-aligned with KM colors
+   Brand-aligned with KM colors (single source of truth)
    =========================================================== */
 
 /* Local brand tokens for the nav (using KM palette) */
@@ -20,6 +20,7 @@
 
   --km-nav-pill-bg: rgba(0, 98, 194, 0.16);
   --km-nav-pill-border: rgba(0, 98, 194, 0.65);
+
   --km-surface: #ffffff;
 }
 
@@ -46,7 +47,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: var(--km-brand-blue);
+  background: var(--km-brand-blue); /* Option A: solid KM Blue rail */
   color: var(--km-surface);
   border-right: 1px solid var(--km-nav-border);
   padding: 0.75rem 0.75rem 1rem;
@@ -245,4 +246,92 @@ body.nav-collapsed .km-aside-nav-toggle-icon {
     position: relative;
     min-height: auto;
   }
+}
+
+/* ===========================================================
+   KMPF Leasing — Top Navbar Layout Fix
+   Make injected nav stretch and separate logo / toggle
+   =========================================================== */
+
+/* Ensure the header's inner container is flex (HTML already uses d-flex on .container, but be explicit) */
+.site-header > .container {
+  display: flex;
+  align-items: center;
+}
+
+/* Make the nav-container stretch across the header row */
+.site-header > .container #nav-container {
+  flex: 1 1 auto;
+}
+
+/* Inside nav-container, make the navbar fill the width and space items apart */
+#nav-container > .navbar-km {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* ===========================================================
+   KMPF Leasing — Coming Soon Hero
+   =========================================================== */
+
+.km-coming-soon-hero {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  min-height: 360px;
+  background: #000;
+}
+
+.km-coming-soon-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.55);
+}
+
+.km-coming-soon-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem 2.5rem;
+  color: #ffffff;
+  background: linear-gradient(120deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.2));
+}
+
+.km-coming-soon-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.km-coming-soon-title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.km-coming-soon-subtitle {
+  font-size: 0.95rem;
+  max-width: 34rem;
+  opacity: 0.96;
+}
+
+.km-coming-soon-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.16);
+  margin-bottom: 0.75rem;
 }

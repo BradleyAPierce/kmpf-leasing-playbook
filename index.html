@@ -13,7 +13,7 @@
     <!-- KM Theme -->
     <link rel="stylesheet" href="assets/css/km-theme.css" />
 
-    <!-- Optional additional custom CSS -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
 
@@ -25,22 +25,35 @@
     <header class="site-header sticky-top bg-km-primary text-white shadow-sm">
       <div
         class="container d-flex align-items-center justify-content-between py-2">
-        <!-- Logo (Injected in nav.html) -->
+        <!-- Logo + Theme Toggle (Injected via nav.html) -->
         <div id="nav-container"></div>
       </div>
     </header>
 
-    <!-- Hero (Injected) -->
-    <div id="hero-container"></div>
+    <!-- ===========================================================
+         PLAYBOOK SHELL (Aside Nav + Page Content)
+         =========================================================== -->
+    <div class="playbook-shell d-flex">
+      <!-- LEFT: Aside Nav injection slot -->
+      <div id="aside-nav-container"></div>
 
-    <!-- Breadcrumb (injected) -->
-    <div id="breadcrumb-container"></div>
+      <!-- RIGHT: All existing home content -->
+      <div class="flex-grow-1">
+        <!-- Hero (Injected) -->
+        <div id="hero-container"></div>
 
-    <!-- Main Content (Injected) -->
-    <div id="content-container"></div>
+        <!-- Breadcrumb (injected) -->
+        <div id="breadcrumb-container"></div>
 
-    <!-- Footer (Injected) -->
-    <div id="footer-container"></div>
+        <!-- Main Content (Injected from content-index.html) -->
+        <div id="content-container"></div>
+
+        <!-- Footer (Injected) -->
+        <div id="footer-container"></div>
+      </div>
+      <!-- end .flex-grow-1 -->
+    </div>
+    <!-- end .playbook-shell -->
 
     <!-- Back-to-top -->
     <button id="back-to-top" class="back-to-top" aria-label="Back to top">
@@ -55,5 +68,8 @@
 
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
+
+    <!-- Aside Nav JS -->
+    <script src="assets/js/aside-nav.js"></script>
   </body>
 </html>

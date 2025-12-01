@@ -1,42 +1,50 @@
 // assets/js/aside-nav.js
-// Purpose: Load the new aside navigation component and handle basic behavior
-// - Injects components/aside-nav.html into #aside-nav-container
+// Purpose: Load the aside navigation component and handle behavior
+// - Uses COMPONENT_BASE_PATH from main.js to build the correct component URL
 // - Highlights the active page based on body[data-page-id]
 // - Handles expand/collapse of the aside nav
+// - On the ROOT index.html only, rewrites hrefs so links point to /modules/*.html correctly
 
 document.addEventListener("DOMContentLoaded", () => {
   const asideContainer = document.getElementById("aside-nav-container");
-  if (!asideContainer) return; // This page isn't using the aside nav
+  if (!asideContainer) return; // This page doesn't use the aside nav
 
-  // 1. Load the aside component HTML
-  fetch("../components/aside-nav.html")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Failed to load aside-nav.html");
+  // Reuse the same base path logic as main.js
+  // main.js defines COMPONENT_BASE_PATH using getBasePath()
+  // ('.' at root, '..' in /modules/)
+  const basePath =
+    typeof COMPONENT_BASE_PATH !== "undefined" ? COMPONENT_BASE_PATH : ".";
+
+  const url = basePath + "/components/aside-nav.html";
+
+  fetch(url)
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error("Failed to load " + url + ": " + res.status);
       }
-      return response.text();
+      return res.text();
     })
     .then((html) => {
       asideContainer.innerHTML = html;
-      initAsideNav();
+      initAsideNav(basePath);
     })
-    .catch((error) => {
-      console.error("[aside-nav] Error loading aside nav:", error);
+    .catch((err) => {
+      console.error("[aside-nav] Error injecting aside nav:", err);
     });
 });
 
-function initAsideNav() {
+function initAsideNav(basePath) {
   const body = document.body;
   const currentPageId = body.dataset.pageId || "";
 
   const asideRoot = document.querySelector(".km-aside-nav");
   if (!asideRoot) return;
 
-  // Start in expanded state by default
+  // Start expanded by default
   body.classList.add("nav-expanded");
   body.classList.remove("nav-collapsed");
 
-  // 2. Highlight the active page based on body[data-page-id]
+  // 1) Highlight active page
   if (currentPageId) {
     const activeLink = asideRoot.querySelector(
       '.km-aside-nav-link[data-page-id="' + currentPageId + '"]'
@@ -46,7 +54,40 @@ function initAsideNav() {
     }
   }
 
-  // 3. Handle collapse/expand toggle
+  // 2) Fix hrefs ONLY when we're on the root index.html (basePath === '.')
+  //    - components/aside-nav.html is authored from the /modules/ perspective:
+  //        home  -> ../index.html
+  //        other -> foundations.html, process-tools.html, etc.
+  //    - On the root, we want:
+  //        home  -> index.html
+  //        other -> modules/foundations.html, modules/process-tools.html, etc.
+  if (basePath === ".") {
+    const navLinks = asideRoot.querySelectorAll(".km-aside-nav-link");
+
+    navLinks.forEach((link) => {
+      const pageId = link.dataset.pageId || "";
+      let href = link.getAttribute("href") || "";
+
+      // Overview (home) should point to the root index.html
+      if (pageId === "home") {
+        link.setAttribute("href", "index.html");
+        return;
+      }
+
+      // For module pages, prefix with "modules/" if it's a simple relative file
+      // e.g., "foundations.html" -> "modules/foundations.html"
+      if (
+        href &&
+        !href.startsWith("modules/") &&
+        !href.startsWith("http") &&
+        !href.startsWith("#")
+      ) {
+        link.setAttribute("href", "modules/" + href);
+      }
+    });
+  }
+
+  // 3) Collapse/expand toggle
   const toggleBtn = asideRoot.querySelector("[data-nav-toggle]");
   if (toggleBtn) {
     toggleBtn.addEventListener("click", () => {
