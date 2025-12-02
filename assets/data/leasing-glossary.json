@@ -1,0 +1,239 @@
+{
+  "groups": [
+    {
+      "id": "lease-types",
+      "title": "Lease Types & Structures",
+      "shortDescription": "FMV, $1 Out, TELP, and bundled leases—when and why to use each.",
+      "tooltip": "Quick reference for the most common lease structures.",
+      "imageName": "leasing-lease-types.jpg",
+      "modal": {
+        "heading": "Lease Types & Structures",
+        "intro": "Use this as a quick script to help reps position the right lease for the right customer outcome.",
+        "bullets": [
+          {
+            "label": "FMV Lease",
+            "body": "Flexible term with options to return, upgrade, buy at fair value, or continue month-to-month—typically with lower payments."
+          },
+          {
+            "label": "$1 Out Lease",
+            "body": "Customer ends with ownership for a nominal amount, typically in exchange for higher monthly payments."
+          },
+          {
+            "label": "Tax-Exempt Lease Purchase (TELP/Muni)",
+            "body": "Designed for qualifying public sector entities; behaves like financing but includes tax-exempt advantages and ownership at term end."
+          },
+          {
+            "label": "Bundled Lease",
+            "body": "Hardware, service, and sometimes supplies rolled into one predictable payment, reducing line-item shopping."
+          }
+        ]
+      }
+    },
+
+    {
+      "id": "end-of-lease",
+      "title": "End-of-Lease Transactions",
+      "shortDescription": "Upgrade, buyout, and return options—how to retain and grow accounts.",
+      "tooltip": "Customer paths at lease maturity.",
+      "imageName": "leasing-end-of-lease.jpg",
+      "modal": {
+        "heading": "End-of-Lease Transactions",
+        "intro": "These are the main paths customers can take as they approach lease maturity.",
+        "bullets": [
+          {
+            "label": "Upgrade",
+            "body": "Replace current devices with newer KM technology while maintaining the relationship and improving the solution."
+          },
+          {
+            "label": "Upgrade to Keep",
+            "body": "Customer keeps selected equipment and adds new devices; kept units may require a buyout or residual payment."
+          },
+          {
+            "label": "Upgrade to Return",
+            "body": "Customer returns existing devices and begins a new lease on the replacement fleet."
+          },
+          {
+            "label": "Buyout Options",
+            "body": "Allows customers to purchase leased equipment outright based on remaining obligation and residual terms."
+          }
+        ]
+      }
+    },
+
+    {
+      "id": "financial-concepts",
+      "title": "Key Financial Concepts",
+      "shortDescription": "Rate factors, residuals, funding amount, and other core leasing numbers.",
+      "tooltip": "Essential financial components of every lease.",
+      "imageName": "leasing-key-financial.jpg",
+      "modal": {
+        "heading": "Key Financial Concepts",
+        "intro": "Anchor reps on the financial levers that shape monthly payments and customer approvals.",
+        "bullets": [
+          {
+            "label": "Lease Rate Factor",
+            "body": "Multiplier used to estimate monthly payments from the financed amount."
+          },
+          {
+            "label": "Residual Value",
+            "body": "Anticipated value of equipment at lease end, allowing lower payments on FMV structures."
+          },
+          {
+            "label": "Funding Amount",
+            "body": "Total value financed, including equipment and any approved soft costs."
+          },
+          {
+            "label": "Credit Decision Inputs",
+            "body": "Time in business, credit history, customer financials, structure, and past performance all influence approvals."
+          }
+        ]
+      }
+    },
+
+    {
+      "id": "documents-processes",
+      "title": "Important Documents & Processes",
+      "shortDescription": "Master agreements, LOIs, funding packages, and key checkpoints.",
+      "tooltip": "Documents and workflows reps should recognize.",
+      "imageName": "leasing-documents-processes.jpg",
+      "modal": {
+        "heading": "Important Documents & Processes",
+        "intro": "These documents and steps appear in nearly every leased deal. Reps don’t need to own the process—but they should recognize the terms.",
+        "bullets": [
+          {
+            "label": "Master Lease Agreement",
+            "body": "Defines core terms and conditions applying across multiple schedules."
+          },
+          {
+            "label": "Schedules and Addenda",
+            "body": "Specify equipment, locations, and special conditions for each unique transaction."
+          },
+          {
+            "label": "Letter of Intent / End-of-Term Notice",
+            "body": "Captures the customer's formal decision as the lease approaches maturity."
+          },
+          {
+            "label": "Funding Package (KIT)",
+            "body": "Complete set of required documents that allow KMPF to ship and fund the deal."
+          }
+        ]
+      }
+    },
+
+    {
+      "id": "tools-systems",
+      "title": "Tools & Systems",
+      "shortDescription": "CPQ, MyKM, billing tools, customer portals, and DFS.",
+      "tooltip": "Where to go to structure and support leased deals.",
+      "imageName": "leasing-tools-systems.jpg",
+      "modal": {
+        "heading": "Tools & Systems",
+        "intro": "Quick orientation to where reps go to structure, price, and support leased deals.",
+        "bullets": [
+          {
+            "label": "CPQ / Quoting Tools",
+            "body": "Used to build configurations, set pricing, and generate lease documentation."
+          },
+          {
+            "label": "MyKM & Sales Portals",
+            "body": "Access to rate cards, programs, promotions, and policy updates."
+          },
+          {
+            "label": "Billing & Customer Portals",
+            "body": "Customers view invoices, balances, payment history, and account status."
+          },
+          {
+            "label": "DFS & Funding Reports",
+            "body": "Summaries showing how each lease has been structured and funded."
+          }
+        ]
+      }
+    },
+
+    {
+      "id": "requirements-compliance",
+      "title": "Customer Requirements & Compliance",
+      "shortDescription": "Insurance, tax documentation, disclosure states, and legal naming.",
+      "tooltip": "Items that affect how quickly a deal can fund.",
+      "imageName": "leasing-requirements-compliance.jpg",
+      "modal": {
+        "heading": "Customer Requirements & Compliance",
+        "intro": "These requirements often determine how quickly a deal can move from approved to funded.",
+        "bullets": [
+          {
+            "label": "Insurance",
+            "body": "Evidence of equipment coverage with correct loss payee information."
+          },
+          {
+            "label": "Tax-Exempt Certificates",
+            "body": "Documentation needed from eligible customers for proper billing."
+          },
+          {
+            "label": "Disclosure States",
+            "body": "States requiring additional interest or lender information on lease documents."
+          },
+          {
+            "label": "Accurate Legal Names",
+            "body": "Customer entity names must match exactly across CPQ, contracts, and all supporting documents."
+          }
+        ]
+      }
+    },
+
+    {
+      "id": "tax-advantages",
+      "title": "Tax Advantages",
+      "shortDescription": "Section 179 concepts and how leasing may fit into a customer’s tax strategy.",
+      "tooltip": "High-level tax positioning points.",
+      "imageName": "leasing-tax-advantages.jpg",
+      "modal": {
+        "heading": "Tax Advantages",
+        "intro": "Reps should never give tax advice, but these are key concepts to reference appropriately.",
+        "bullets": [
+          {
+            "label": "Section 179 Concept",
+            "body": "Customers may be able to expense qualifying capital purchases in the year of acquisition."
+          },
+          {
+            "label": "Leasing vs. Buying",
+            "body": "Lease payments may receive different tax treatment than equipment purchases; customers must consult advisors."
+          },
+          {
+            "label": "Positioning",
+            "body": "Reps can introduce the concept but should encourage customers to speak with a tax professional."
+          }
+        ]
+      }
+    },
+
+    {
+      "id": "sales-support",
+      "title": "Sales Support",
+      "shortDescription": "Who reps can call for help: Leasing Ops, DCM, KMPF specialists, and learning tools.",
+      "tooltip": "You’re never alone on a leasing deal.",
+      "imageName": "leasing-sales-support.jpg",
+      "modal": {
+        "heading": "Sales Support",
+        "intro": "Reps never need to navigate complex leasing conversations alone—these are the teams who support them.",
+        "bullets": [
+          {
+            "label": "Leasing Operations",
+            "body": "Support for documentation, funding status, requests, and lease processing."
+          },
+          {
+            "label": "DCM / Direct Channel Marketing",
+            "body": "Promotion updates, program support, and campaign-specific pricing."
+          },
+          {
+            "label": "KMPF Specialists",
+            "body": "Experts who can join customer calls, assist with deal structuring, and coach reps."
+          },
+          {
+            "label": "Learning Assets",
+            "body": "Referrals back to the Playbook, Sales Process Guide, and conversation training tools."
+          }
+        ]
+      }
+    }
+  ]
+}
