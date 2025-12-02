@@ -85,6 +85,12 @@
   color: var(--km-nav-text-muted);
 }
 
+/* Force aside nav titles to always remain white (fixed UI element) */
+.km-aside-nav-title-main,
+.km-aside-nav-title-sub {
+  color: #ffffff !important;
+}
+
 /* Toggle button */
 .km-aside-nav-toggle {
   border: none;
