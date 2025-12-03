@@ -5,7 +5,7 @@
       "title": "Lease Types & Structures",
       "shortDescription": "FMV, $1 Out, TELP, and bundled leases—when and why to use each.",
       "tooltip": "Quick reference for the most common lease structures.",
-      "imageName": "leasing-lease-types.jpg",
+      "imageName": "lease-types.jpg",
       "modal": {
         "heading": "Lease Types & Structures",
         "intro": "Use this as a quick script to help reps position the right lease for the right customer outcome.",
@@ -35,7 +35,7 @@
       "title": "End-of-Lease Transactions",
       "shortDescription": "Upgrade, buyout, and return options—how to retain and grow accounts.",
       "tooltip": "Customer paths at lease maturity.",
-      "imageName": "leasing-end-of-lease.jpg",
+      "imageName": "lease-types.jpg",
       "modal": {
         "heading": "End-of-Lease Transactions",
         "intro": "These are the main paths customers can take as they approach lease maturity.",
@@ -65,7 +65,7 @@
       "title": "Key Financial Concepts",
       "shortDescription": "Rate factors, residuals, funding amount, and other core leasing numbers.",
       "tooltip": "Essential financial components of every lease.",
-      "imageName": "leasing-key-financial.jpg",
+      "imageName": "lease-types.jpg",
       "modal": {
         "heading": "Key Financial Concepts",
         "intro": "Anchor reps on the financial levers that shape monthly payments and customer approvals.",
@@ -95,7 +95,7 @@
       "title": "Important Documents & Processes",
       "shortDescription": "Master agreements, LOIs, funding packages, and key checkpoints.",
       "tooltip": "Documents and workflows reps should recognize.",
-      "imageName": "leasing-documents-processes.jpg",
+      "imageName": "lease-types.jpg",
       "modal": {
         "heading": "Important Documents & Processes",
         "intro": "These documents and steps appear in nearly every leased deal. Reps don’t need to own the process—but they should recognize the terms.",
@@ -125,7 +125,7 @@
       "title": "Tools & Systems",
       "shortDescription": "CPQ, MyKM, billing tools, customer portals, and DFS.",
       "tooltip": "Where to go to structure and support leased deals.",
-      "imageName": "leasing-tools-systems.jpg",
+      "imageName": "lease-types.jpg",
       "modal": {
         "heading": "Tools & Systems",
         "intro": "Quick orientation to where reps go to structure, price, and support leased deals.",
@@ -155,7 +155,7 @@
       "title": "Customer Requirements & Compliance",
       "shortDescription": "Insurance, tax documentation, disclosure states, and legal naming.",
       "tooltip": "Items that affect how quickly a deal can fund.",
-      "imageName": "leasing-requirements-compliance.jpg",
+      "imageName": "lease-types.jpg",
       "modal": {
         "heading": "Customer Requirements & Compliance",
         "intro": "These requirements often determine how quickly a deal can move from approved to funded.",
@@ -185,7 +185,7 @@
       "title": "Tax Advantages",
       "shortDescription": "Section 179 concepts and how leasing may fit into a customer’s tax strategy.",
       "tooltip": "High-level tax positioning points.",
-      "imageName": "leasing-tax-advantages.jpg",
+      "imageName": "lease-types.jpg",
       "modal": {
         "heading": "Tax Advantages",
         "intro": "Reps should never give tax advice, but these are key concepts to reference appropriately.",
@@ -211,7 +211,7 @@
       "title": "Sales Support",
       "shortDescription": "Who reps can call for help: Leasing Ops, DCM, KMPF specialists, and learning tools.",
       "tooltip": "You’re never alone on a leasing deal.",
-      "imageName": "leasing-sales-support.jpg",
+      "imageName": "lease-types.jpg",
       "modal": {
         "heading": "Sales Support",
         "intro": "Reps never need to navigate complex leasing conversations alone—these are the teams who support them.",
