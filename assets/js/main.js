@@ -228,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Map page IDs to their content files
     const contentMap = {
       home: "content-modules/content-index.html",
-      foundations: "content-modules/content-foundations.html",
+      "quick-start": "content-modules/content-quick-start.html",
       "lease-types": "content-modules/content-lease-types.html",
       conversations: "content-modules/content-conversations.html",
       objections: "content-modules/content-objections.html",

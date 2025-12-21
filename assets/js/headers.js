@@ -20,9 +20,9 @@ const HERO_CONFIG = {
       "https://www.thecannatareport.com/konica-minolta-1st-citizens-bank-agree/",
   },
 
-  foundations: {
+  "quick-start": {
     img: CDN + "foundations.jpg",
-    title: "Foundations",
+    title: "Quick Start Guide",
     subtitle:
       "Build your baseline understanding of leasing, KMPF, and key financial concepts every sales rep should know.",
   },
