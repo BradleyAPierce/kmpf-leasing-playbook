@@ -213,6 +213,7 @@ function buildModalHtml(group, modalId) {
   const heading = modal.heading || group.title || "";
   const intro = modal.intro || "";
   const bullets = Array.isArray(modal.bullets) ? modal.bullets : [];
+  const imageSrc = buildImageUrl(group.imageName);
 
   const bulletsHtml = bullets
     .map((item) => {
@@ -227,14 +228,13 @@ function buildModalHtml(group, modalId) {
     .join("");
 
   const introHtml = intro ? `<p class="mb-2">${escapeHtml(intro)}</p>` : "";
-
   const bulletsBlock = bulletsHtml
     ? `<ul class="mb-0">${bulletsHtml}</ul>`
     : "";
 
   return `
     <div class="modal fade" id="${modalId}" tabindex="-1" aria-labelledby="${modalId}Label" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content km-modal">
           <div class="modal-header">
             <h3 class="modal-title km-h3-blue" id="${modalId}Label">${escapeHtml(
@@ -243,8 +243,17 @@ function buildModalHtml(group, modalId) {
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            ${introHtml}
-            ${bulletsBlock}
+            <div class="row align-items-center">
+              <div class="col-md-9">
+                ${introHtml}
+                ${bulletsBlock}
+              </div>
+              <div class="col-md-3 d-flex justify-content-center align-items-center" style="min-height:300px;">
+                <img src="${imageSrc}" class="img-fluid" alt="${escapeHtml(
+    group.title
+  )}" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
