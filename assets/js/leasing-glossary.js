@@ -167,26 +167,25 @@ function buildCardHtml(group, modalId, imageSrc) {
     <div class="col-12">
       <div class="card km-leasing-card shadow-sm">
         <div class="row g-0 align-items-center">
-          <div class="col-4 col-md-3">
+          <div class="col-12 col-md-3 d-flex align-items-center justify-content-center order-1 order-md-1">
             <img
               src="${imageSrc}"
-              class="img-fluid km-leasing-card-img"
+              class="img-fluid w-100 w-md-auto"
               alt="${escapeHtml(title)}"
+              style="object-fit:cover; max-height:180px;"
             />
           </div>
-          <div class="col-8 col-md-9">
-            <div class="card-body d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center">
-              <div>
-                <h3 class="card-title km-card-title h5 mb-2">${escapeHtml(
-                  title
-                )}</h3>
-                <p class="card-text small text-muted mb-0">
-                  ${escapeHtml(shortDescription)}
-                </p>
-              </div>
+          <div class="col-12 col-md-9 order-2 order-md-2">
+            <div class="card-body">
+              <h3 class="card-title km-card-title h5 mb-2">${escapeHtml(
+                title
+              )}</h3>
+              <p class="card-text small text-muted mb-0">
+                ${escapeHtml(shortDescription)}
+              </p>
               <button
                 type="button"
-                class="btn btn-primary ms-md-3 mt-3 mt-md-0"
+                class="btn btn-primary mt-3"
                 data-bs-toggle="modal"
                 data-bs-target="#${modalId}"
                 title="${escapeHtml(tooltip)}"
@@ -244,14 +243,14 @@ function buildModalHtml(group, modalId) {
           </div>
           <div class="modal-body">
             <div class="row align-items-center">
-              <div class="col-md-9">
-                ${introHtml}
-                ${bulletsBlock}
-              </div>
-              <div class="col-md-3 d-flex justify-content-center align-items-center" style="min-height:300px;">
-                <img src="${imageSrc}" class="img-fluid" alt="${escapeHtml(
+              <div class="col-12 col-lg-3 d-flex justify-content-center align-items-center order-1 order-lg-2" style="min-width:180px; min-height:180px;">
+                <img src="${imageSrc}" class="img-fluid w-100 w-lg-auto" alt="${escapeHtml(
     group.title
   )}" />
+              </div>
+              <div class="col-12 col-lg-9 order-2 order-lg-1">
+                ${introHtml}
+                ${bulletsBlock}
               </div>
             </div>
           </div>
